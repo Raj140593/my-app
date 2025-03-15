@@ -111,6 +111,10 @@
       padding-top: 60px;
       list-style: none;
     }
+    .sidebar li:hover{
+      background: orangered;
+      transform: scale(1.05);
+    }
     .sidebar ul {
       list-style: none;  /* ✅ Bullets remove karega */
       padding: 0; /* ✅ Extra spacing hatayega */
@@ -216,7 +220,6 @@
     
       .job-list {
         display: flex;
-        flex-wrap: wrap;
         justify-content:space-between;
        
       }
