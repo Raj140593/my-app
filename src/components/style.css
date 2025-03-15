@@ -1,3 +1,103 @@
+@media (max-width: 768px) {
+  .sidebar {
+      width: 100vw !important;   /* ✅ Full width */
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      background-color: #0b9ca1 !important;
+      z-index: 10000 !important; /* ✅ Ensure sidebar is on top */
+      overflow-y: auto;
+      transition: transform 0.3s ease-in-out;
+      transform: translateX(-100%); /* ✅ Initially hidden */
+  }
+
+  .sidebar.sidebar-open {
+      transform: translateX(0) !important; /* ✅ Show when open */
+  }
+
+  /* Ensure sidebar image is full width */
+  .sidebar .logo {
+      width: 70%; /* ✅ Full width */
+      height: auto;
+      display: block;
+  }
+
+  /* Hide body scrolling when sidebar is open */
+  body.sidebar-active {
+      overflow: hidden;
+      height: 100vh;
+  }
+}
+
+/* Responsive Styling for About Page */
+@media (max-width: 768px) {
+  .about-sections {
+      display: grid;
+      grid-template-columns: 1fr; /* Single column for smaller screens */
+      gap: 20px;
+  }
+
+  .about-section {
+      text-align: center;
+      
+  }
+
+  .about-image {
+    width: 90vw !important;
+    height: 100vw !important;
+  }
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+  .footer-container {
+      display: flex;
+      flex-direction: column; /* Mobile me ek ke baad ek dikhane ke liye */
+      align-items: center;
+  }
+
+  .footer-section {
+    width: 90vw !important;
+      margin-bottom: 13px;
+  
+  }
+
+  /* Social Icons */
+  .footer-section .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+  }
+}
+
+/* Responsive Job Listings */
+@media (max-width: 768px) {
+  .job-list {
+      flex-direction: column;
+      align-items: center;
+     
+  }
+
+  .job-card {
+    width: 100vw !important;; /* Adjust for small screens */
+  }
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+
+      flex-wrap: nowrap; /* Ensure everything stays in one line */
+  }
+
+
+
+}
+
 
 /* <---sidenavbar--- start-----> */
 .sidebar img{
