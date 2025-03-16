@@ -1,3 +1,14 @@
+/* Scroll Progress Indicator */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background-color:#091d3e;
+  z-index: 1000;
+  transition: width 0.2s ease-out;
+}
+
 @media (max-width: 768px) {
   .sidebar {
       width: 100vw !important;   /* ✅ Full width */
