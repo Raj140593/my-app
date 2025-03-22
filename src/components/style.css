@@ -286,19 +286,94 @@
     
 /* <--contact page-----> */
 
-  /* Contact Button */
-  .contact-button {
-  
-    background: #007bff;
-    border: none;
-    border-radius: 5px;
-    
-  }
-  
-  .contact-button:hover {
-    background: #0056b3;
-  }
-  
+  /* ContactUs.css */
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e1e2e, #28293d);
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+}
+
+.contact-box {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 12px;
+  width: 400px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.contact-box h2 {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  outline: none;
+}
+
+.input-field::placeholder {
+  color: #bbb;
+}
+
+.file-upload-box {
+  border: 2px dashed #888;
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+.file-upload-box:hover {
+  border-color: #6a5acd;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.progress {
+  height: 100%;
+  width: 0%;
+  background: #6a5acd;
+  transition: width 0.5s ease-in-out;
+}
+
+.upload-button {
+  width: 100%;
+  padding: 12px;
+  background: #6a5acd;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.upload-button:hover {
+  background: #574bda;
+}
+
   /* Modal Overlay */
   .modal {
     display: flex;
@@ -450,6 +525,7 @@
     border-radius: 10px;
     box-shadow: inset 0px 0px 10px rgba(255, 255, 255, 0.05),
       0px 5px 15px rgba(0, 0, 0, 0.5);
+      
   }
   
   .footer-section h2 {
@@ -515,12 +591,31 @@
   }
  
 /* Footer bottom part fix at the bottom */
+/* style.css */
+
+.footer {
+  position: relative;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  overflow: hidden;
+ 
+}
+
+.footer-container {
+  position: relative;
+  background-color: #0a192f;
+  overflow: hidden;
+}
+
+
 .footer-bottom {
     width: 100%; /* ✅ Copyright ko full width karega */
     text-align: center;
     padding: 10px 0;
     margin-top: 20px; /* ✅ Footer ke upar space dega */
     border-top: 1px solid rgba(33, 165, 218, 0.2); color: #fff;
+    
   }
   
   /* Footer bottom link styling */
@@ -563,3 +658,194 @@
   color: black;
 }
 /* <----------header.....end.,.........> */
+
+
+/* ---- pizza Layout ---- */
+.container {
+  max-width: 1300px;
+  padding: 20px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* ---- Recipe Cards ---- */
+.card {
+  border: none;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* ---- Recipe Image ---- */
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.1);
+}
+
+/* ---- Card Body ---- */
+
+.card-body {
+  padding: 15px;
+  background: #fff;
+  text-align: center;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.card-text {
+  font-size: 14px;
+  color: #666;
+}
+
+/* ---- Ingredients Section ---- */
+.card-body p {
+  font-size: 14px;
+  color: #555;
+}
+
+/* ---- Responsive Grid ---- */
+@media (max-width: 768px) {
+  .row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .col-md-4 {
+    width: 90%;
+  }
+}
+/* 🔹 Background Styling */
+.pizza-detail-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+ background-color: #333;
+  border-radius: 15px;
+  text-align: center;
+}
+
+
+/* 🔹 Image Styling */
+.pizza-image {
+  width: 750px;
+  height: 600px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  border: 5px solid white;
+}
+
+/* 🔹 Headings & Text */
+.pizza-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.pizza-info {
+  font-size: 18px;
+  color: #fff;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.pizza-ingredients {
+  font-size: 16px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+}
+
+/* 🔹 Back Button Styling */
+.back-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+.buy-now-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #1cc49a;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.buy-now-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.buy-now-image {
+  width: 100px;
+  border-radius: 10px;
+}
+
+.buy-now-details {
+  text-align: left;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input, textarea, select {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.confirm-button {
+  padding: 12px;
+  font-size: 16px;
+  background: linear-gradient(135deg, #ff512f, #dd2476);
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.confirm-button:hover {
+  background: linear-gradient(135deg, #ff7849, #ff1744);
+}
+

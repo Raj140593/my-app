@@ -1,50 +1,43 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
 import ContactUs from "./components/ContactUs";
 import About from "./components/About";
+import Pizza from "./components/pizza/Pizza";
+import PizzaDetail from "./components/pizza/PizzaDetail"; // ✅ Import Detail Page
+import BuyNow from "./components/pizza/BuyNow";
 
 const Index = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
-  const toggleSidebar = () => {
-    setIsOpen(!isOpen);
-  };
-
-  // ✅ Sidebar ke bahar click karne par close karne ka function
-  const handleOutsideClick = (e) => {
-    if (isOpen && !e.target.closest(".sidebar") && !e.target.closest(".btn-outline-light")) {
-      setIsOpen(false);
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener("click", handleOutsideClick);
-    return () => {
-      document.removeEventListener("click", handleOutsideClick);
-    };
-  }, [isOpen]);
-
   return (
-    <div className={`main-content ${isOpen ? "shifted" : ""}`}>
-      <Header toggleSidebar={toggleSidebar} isOpen={isOpen} />
-      <Sidebar isOpen={isOpen} toggleSidebar={toggleSidebar} setIsContactModalOpen={setIsContactModalOpen} />
-      <ContactUs isOpen={isContactModalOpen} setIsOpen={setIsContactModalOpen} />
-      <About />
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <div className={`main-content ${isOpen ? "shifted" : ""}`}>
+        <Header toggleSidebar={() => setIsOpen(!isOpen)} isOpen={isOpen} />
+        <Sidebar isOpen={isOpen} toggleSidebar={() => setIsOpen(!isOpen)} setIsContactModalOpen={setIsContactModalOpen} />
+        <ContactUs isOpen={isContactModalOpen} setIsOpen={setIsContactModalOpen} />
+        
+        <Routes>
+          <Route path="/" element={<About />} />
+          <Route path="/pizza" element={<Pizza />} />
+          <Route path="/pizza/:id" element={<PizzaDetail />} /> 
+          <Route path="/buy-now" element={<BuyNow />} />
+
+        </Routes>
+
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 };
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Index />
-    </BrowserRouter>
+    <Index />
   </React.StrictMode>
 );

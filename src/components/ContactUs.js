@@ -6,40 +6,57 @@ const ContactUs = ({ isOpen, setIsOpen }) => {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(null);
   const [error, setError] = useState(null);
+  const [file, setFile] = useState(null);
+  const [uploadProgress, setUploadProgress] = useState(0);
 
-  if (!isOpen) return null; // ✅ Modal tabhi dikhega jab open ho
+  if (!isOpen) return null;
 
-  // Modal ko close karne ka function
   const closeModal = (e) => {
     if (e.target.classList.contains("modal")) {
       setIsOpen(false);
-      resetForm(); // ✅ Modal band hone par form reset
+      resetForm();
     }
   };
 
-  // Form ke inputs ko handle karna
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // ✅ Message Send karne ka function
-  const sendMessage = async (e) => {
-    e.preventDefault(); // ✅ Prevent page reload
+  const handleFileChange = (e) => {
+    setFile(e.target.files[0]);
+  };
 
+  const sendMessage = async (e) => {
+    e.preventDefault();
     setLoading(true);
     setSuccess(null);
     setError(null);
+    setUploadProgress(0);
 
     try {
+      const formData = new FormData();
+      formData.append("name", formData.name);
+      formData.append("email", formData.email);
+      formData.append("message", formData.message);
+      if (file) {
+        formData.append("file", file);
+      }
+
       const response = await fetch("https://jsonplaceholder.typicode.com/posts", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: formData,
+        headers: {},
+        onUploadProgress: (progressEvent) => {
+          const percentCompleted = Math.round((progressEvent.loaded * 100) / progressEvent.total);
+          setUploadProgress(percentCompleted);
+        },
       });
 
       if (response.ok) {
         setSuccess("Your message has been sent successfully!");
-        setFormData({ name: "", email: "", message: "" }); // ✅ Form reset
+        setFormData({ name: "", email: "", message: "" });
+        setFile(null);
+        setUploadProgress(0);
       } else {
         throw new Error("Failed to send message");
       }
@@ -50,12 +67,13 @@ const ContactUs = ({ isOpen, setIsOpen }) => {
     setLoading(false);
   };
 
-  // ✅ Modal close hone par form reset karne ka function
   const resetForm = () => {
     setFormData({ name: "", email: "", message: "" });
     setSuccess(null);
     setError(null);
     setLoading(false);
+    setFile(null);
+    setUploadProgress(0);
   };
 
   return (
@@ -63,7 +81,6 @@ const ContactUs = ({ isOpen, setIsOpen }) => {
       <div className="modal-content">
         <span className="close" onClick={() => setIsOpen(false)}>&times;</span>
 
-        {/* ✅ Image added here */}
         <div className="image-container">
           <img src="/img/contact.webp" alt="Contact" />
         </div>
@@ -98,6 +115,9 @@ const ContactUs = ({ isOpen, setIsOpen }) => {
               onChange={handleChange}
               required
             />
+            <input type="file" onChange={handleFileChange} />
+            {file && <p>Selected File: {file.name}</p>}
+            {uploadProgress > 0 && <progress value={uploadProgress} max="100" />}
             <button type="submit" disabled={loading}>
               {loading ? "Sending..." : "Send Message"}
             </button>
