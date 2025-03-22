@@ -885,8 +885,8 @@ input, textarea, select {
     padding: 10px;
   }
   .buy-now-image {
-    width: 80px;
-    height: 80px;
+    width: 200px;
+    height: 200px;
   }
   input, textarea, select {
     font-size: 14px;
