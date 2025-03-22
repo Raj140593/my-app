@@ -1,3 +1,6 @@
+body, html {
+  overflow: auto !important;  /* ✅ Ensure page scrolls properly */
+}
 /* Scroll Progress Indicator */
 .scroll-progress {
   position: fixed;
@@ -819,10 +822,17 @@
 
 
 /* ---- pizza Layout ---- */
-.container {
-  max-width: 1300px;
-  padding: 20px;
+.pizza-container {
+  min-height: 100vh;  /* ✅ Full height allow karega */
+  overflow: auto; /* ✅ Ensure scroll works */
 }
+.pizza-container {
+  position: relative !important;  /* ✅ Ensure it scrolls properly */
+}
+.pizza-wrapper {
+  overflow: auto !important;  /* ✅ Ensure scrolling works */
+}
+
 
 h2 {
   text-align: center;
