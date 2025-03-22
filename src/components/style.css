@@ -812,8 +812,8 @@ h2 {
 
 /* 🔹 Image Styling */
 .buy-now-image {
-  width: 120px;
-  height: 120px;
+  width: 300px;
+  height: 230px;
   object-fit: cover;
   border-radius: 10px;
   border: 3px solid white;
@@ -869,8 +869,8 @@ input, textarea, select {
     text-align: center;
   }
   .buy-now-image {
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
   }
   .confirm-button {
     font-size: 14px;
