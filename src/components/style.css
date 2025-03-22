@@ -9,34 +9,192 @@
   transition: width 0.2s ease-out;
 }
 
+/* 🔹 Sidebar Base Styles */
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  left: -250px;
+  top: 0;
+  background: linear-gradient(135deg, #01e4e4, #3a3a3a);
+  transition: left 0.3s ease-in-out;
+  padding: 20px;
+  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+/* ✅ Sidebar Open */
+.sidebar.sidebar-open {
+  left: 0;
+}
+
+/* 🔹 Sidebar Close Button */
+.closebtn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.closebtn:hover {
+  transform: scale(1.2);
+}
+
+/* 🔹 Sidebar Logo */
+.logo {
+  width: 150px;
+  display: block;
+  margin: 10px auto;
+  border-radius: 10px;
+}
+
+/* 🔹 Sidebar Links */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.sidebar ul li {
+  padding: 12px;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.sidebar ul li:hover {
+  background: rgba(221, 55, 5, 0.1);
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  font-size: 15px;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  transition: color 0.3s;
+}
+
+.sidebar ul li a:hover {
+  color: #cad5df;
+}
+
+/* 🔹 Services Dropdown */
+.dropdown > a {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 🔹 Services Dropdown */
+.dropdown {
+  position: relative;
+  width: 100%;
+}
+
+/* 🔹 Dropdown Link */
+.dropdown > a {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  border-radius: 8px;
+  transition: background 0.3s ease-in-out;
+  color: white;
+}
+
+/* 🔹 Hover Effect */
+.dropdown:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* 🔹 Dropdown Arrow */
+.dropdown > a span {
+  transition: transform 0.3s ease-in-out;
+}
+
+/* 🔹 Rotate Arrow when Open */
+.dropdown.open > a span {
+  transform: rotate(180deg);
+}
+
+/* 🔹 Dropdown Menu */
+.dropdown-menu {
+  display: none;
+  flex-direction: column; background: linear-gradient(135deg, #01e4e4, #3a3a3a);
+
+}
+
+/* ✅ Show Dropdown Menu when Open */
+.dropdown.open .dropdown-menu {
+  display: flex;
+}
+
+
+.dropdown-menu li:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+/* ✅ Services Dropdown List Items */
+/* ✅ Services Dropdown List Items */
+.sidebar .dropdown-menu li a {
+  font-size: 11px !important; 
+  
+}
+
+
+/* 🔹 Mobile Responsive */
 @media (max-width: 768px) {
   .sidebar {
-      width: 100vw !important;   /* ✅ Full width */
-      position: fixed !important;
+      width: 100vw; /* ✅ Full width */
+      position: fixed;
       top: 0;
       left: 0;
-      background-color: #0b9ca1 !important;
-      z-index: 10000 !important; /* ✅ Ensure sidebar is on top */
+      background-color: #0b9ca1;
+      z-index: 10000; /* ✅ Ensure sidebar is on top */
       overflow-y: auto;
       transition: transform 0.3s ease-in-out;
       transform: translateX(-100%); /* ✅ Initially hidden */
   }
 
   .sidebar.sidebar-open {
-      transform: translateX(0) !important; /* ✅ Show when open */
+      transform: translateX(0);
   }
 
-  /* Ensure sidebar image is full width */
+  /* ✅ Sidebar Image Full Width */
   .sidebar .logo {
-      width: 70%; /* ✅ Full width */
+      width: 70%;
       height: auto;
       display: block;
   }
 
-  /* Hide body scrolling when sidebar is open */
+  /* ✅ Prevent Body Scrolling When Sidebar is Open */
   body.sidebar-active {
       overflow: hidden;
       height: 100vh;
+  }
+
+  /* ✅ Transparent Background Click to Close */
+  .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 9999;
+      display: none;
+  }
+
+  .sidebar-open + .overlay {
+      display: block;
   }
 }
 
