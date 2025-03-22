@@ -738,20 +738,22 @@ h2 {
   }
 }
 /* 🔹 Background Styling */
+/* 🔹 Pizza Detail Container */
 .pizza-detail-container {
   max-width: 800px;
   margin: 40px auto;
   padding: 20px;
- background-color: #333;
+  background-color: #333;
+  color: white;
   border-radius: 15px;
   text-align: center;
 }
 
-
-/* 🔹 Image Styling */
+/* 🔹 Responsive Image */
 .pizza-image {
-  width: 750px;
-  height: 600px;
+  width: 100%;
+  max-width: 750px; /* ✅ Maximum width set */
+  height: auto; /* ✅ Maintain aspect ratio */
   object-fit: cover;
   border-radius: 10px;
   margin-bottom: 20px;
@@ -773,15 +775,7 @@ h2 {
   font-weight: 500;
 }
 
-.pizza-ingredients {
-  font-size: 16px;
-  background: rgba(255, 255, 255, 0.2);
-  padding: 10px;
-  border-radius: 10px;
-  color: white;
-}
-
-/* 🔹 Back Button Styling */
+/* 🔹 Back Button */
 .back-button {
   display: inline-block;
   margin-top: 20px;
@@ -789,13 +783,14 @@ h2 {
   font-size: 16px;
   font-weight: bold;
   color: white;
-
   border: none;
   border-radius: 8px;
   cursor: pointer;
   text-decoration: none;
   transition: all 0.3s ease-in-out;
 }
+
+/* 🔹 Buy Now Container */
 .buy-now-container {
   max-width: 600px;
   margin: 50px auto;
@@ -806,46 +801,48 @@ h2 {
   text-align: center;
 }
 
-.buy-now-content {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  margin-bottom: 20px;
+/* ✅ **Responsive Design** */
+
+/* 📱 Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  .pizza-detail-container {
+    max-width: 90%;
+    padding: 15px;
+  }
+  .pizza-title {
+    font-size: 24px;
+  }
+  .pizza-info {
+    font-size: 14px;
+  }
+  .pizza-image {
+    max-width: 100%; /* ✅ Full width on small screens */
+    height: auto;
+  }
+  .back-button {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
 }
 
-.buy-now-image {
-  width: 100px;
-  border-radius: 10px;
+/* 📱 Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .pizza-detail-container {
+    max-width: 95%;
+    padding: 10px;
+  }
+  .pizza-title {
+    font-size: 20px;
+  }
+  .pizza-info {
+    font-size: 13px;
+  }
+  .pizza-image {
+    width: 100%; /* ✅ Adjusted for mobile */
+    height: auto;
+  }
+  .back-button {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
 }
-
-.buy-now-details {
-  text-align: left;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-input, textarea, select {
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-}
-
-.confirm-button {
-  padding: 12px;
-  font-size: 16px;
-  background: linear-gradient(135deg, #ff512f, #dd2476);
-  color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 8px;
-  transition: 0.3s;
-}
-
-.confirm-button:hover {
-  background: linear-gradient(135deg, #ff7849, #ff1744);
-}
-
