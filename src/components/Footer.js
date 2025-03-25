@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaHome, FaInfo, FaServicestack, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa"; 
+import { FaHome, FaInfo,FaBlog , FaServicestack, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa"; 
 import { IoIosMail } from "react-icons/io";
+import { MdGroupWork } from "react-icons/md";
 import { IoCall } from "react-icons/io5";
 import "./style.css";
 
@@ -65,9 +66,9 @@ const Footer = ({ setIsOpen }) => {
         <ul>
           <li><Link to="/"><FaHome /> Home</Link></li>
           <li><Link to="/pizza"><FaInfo /> About</Link></li>
-          <li><a href="#"><FaServicestack /> Services</a></li>
-          <li><a href="#">Works</a></li>
-          <li><a href="#">Blog</a></li>
+          <li><Link to="#"><FaServicestack /> Services</Link></li>
+          <li><Link to="#"><MdGroupWork />Works</Link></li>
+          <li><Link to="#"><FaBlog />Blog</Link></li>
           <li>
             <Link to="#" onClick={(e) => { e.preventDefault(); setIsOpen(true); }}>
               <FaEnvelope /> Contact
