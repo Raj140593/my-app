@@ -1,6 +1,4 @@
-body, html {
-  overflow: auto !important;  /* ✅ Ensure page scrolls properly */
-}
+
 /* Scroll Progress Indicator */
 .scroll-progress {
   position: fixed;
@@ -831,14 +829,9 @@ body, html {
 
 /* ---- pizza Layout ---- */
 .pizza-container {
-  min-height: 100vh;  /* ✅ Full height allow karega */
-  overflow: auto; /* ✅ Ensure scroll works */
-}
-.pizza-container {
-  position: relative !important;  /* ✅ Ensure it scrolls properly */
-}
-.pizza-wrapper {
-  overflow: auto !important;  /* ✅ Ensure scrolling works */
+  height: fit-content ; 
+  position: relative !important;
+
 }
 
 
@@ -866,7 +859,7 @@ h2 {
 /* ---- Recipe Image ---- */
 
 .card-img-top {
-  height: 200px;
+  height: 250px;
   object-fit: cover;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;

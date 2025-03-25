@@ -1,8 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { FaTimes, FaHome, FaInfo, FaServicestack, FaEnvelope, FaIndustry, FaChevronDown } from "react-icons/fa";
 import "./style.css";
-const Footer = () => {
+
+const Footer = ({ setIsOpen }) => {
   return (
     <footer className="footer-container">
+
       <div className="footer-section">
         <h2 className="footer-heading">Have a Questions?</h2>
         <div className="block-23 mb-3">
@@ -67,13 +71,14 @@ const Footer = () => {
         <h2>Quick Links</h2>
         <ul>
           <li>
-            <a href="index.html">Home</a>
+             <li><Link to="/"><FaHome /> Home</Link></li>
+                   
           </li>
           <li>
-            <a href="#">About</a>
+          <li><Link to="/pizza"><FaInfo /> About</Link></li>
           </li>
           <li>
-            <a href="#">Services</a>
+            <a href="#"> <FaServicestack /> Services</a>
           </li>
           <li>
             <a href="#">Works</a>
@@ -82,7 +87,9 @@ const Footer = () => {
             <a href="#">Blog</a>
           </li>
           <li>
-            <a href="#">Contact</a>
+            <Link to="#" onClick={(e) => { e.preventDefault(); setIsOpen(true); }}>
+              <FaEnvelope /> Contact
+            </Link>
           </li>
         </ul>
       </div>

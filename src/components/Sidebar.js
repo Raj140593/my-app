@@ -5,7 +5,7 @@ import { MdAssuredWorkload } from "react-icons/md";
 import "./style.css";
 
 const Sidebar = ({ isOpen, toggleSidebar, setIsContactModalOpen }) => {
-  const [isServicesOpen, setIsServicesOpen] = useState(false); // ✅ Dropdown state
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
 
   useEffect(() => {
     const handleOutsideClick = (event) => {
@@ -20,7 +20,7 @@ const Sidebar = ({ isOpen, toggleSidebar, setIsContactModalOpen }) => {
     };
   }, [isOpen, toggleSidebar]);
 
-  // ✅ Sidebar close hone par Services dropdown bhi band ho jayega
+
   useEffect(() => {
     if (!isOpen) {
       setIsServicesOpen(false);
