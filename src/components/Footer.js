@@ -1,12 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaTimes, FaHome, FaInfo, FaServicestack, FaEnvelope, FaIndustry, FaChevronDown } from "react-icons/fa";
+import { FaHome, FaInfo, FaServicestack, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa"; 
+import { IoIosMail } from "react-icons/io";
+import { IoCall } from "react-icons/io5";
 import "./style.css";
 
 const Footer = ({ setIsOpen }) => {
   return (
     <footer className="footer-container">
-
       <div className="footer-section">
         <h2 className="footer-heading">Have a Questions?</h2>
         <div className="block-23 mb-3">
@@ -14,21 +15,19 @@ const Footer = ({ setIsOpen }) => {
             <li>
               <a href="#">
                 <span className="icon ion-ios-pin"></span>
-                <span className="text">
-                  203 Fake St. Mountain View, San Francisco, California, USA
-                </span>
+                <span className="text"><FaMapMarkerAlt /> 203 Fake St. Mountain View, San Francisco, California, USA</span>
               </a>
             </li>
             <li>
               <a href="#">
                 <span className="icon ion-ios-call"></span>
-                <span className="text">+2 392 3929 210</span>
+                <span className="text"><IoCall />+2 392 3929 210</span>
               </a>
             </li>
             <li>
               <a href="#">
                 <span className="icon ion-ios-send"></span>
-                <span className="text">info@yourdomain.com</span>
+                <span className="text"><IoIosMail />info@yourdomain.com</span>
               </a>
             </li>
           </ul>
@@ -36,19 +35,13 @@ const Footer = ({ setIsOpen }) => {
 
         <div className="social-icons">
           <a href="https://facebook.com" className="social-icon">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
-              alt="Facebook"
-            />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" />
           </a>
           <a href="https://twitter.com" className="social-icon">
             <img src="/img/tiwt.png" alt="Twitter" />
           </a>
           <a href="https://instagram.com" className="social-icon">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
-              alt="Instagram"
-            />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
           </a>
         </div>
       </div>
@@ -70,22 +63,11 @@ const Footer = ({ setIsOpen }) => {
       <div className="footer-section links">
         <h2>Quick Links</h2>
         <ul>
-          <li>
-             <li><Link to="/"><FaHome /> Home</Link></li>
-                   
-          </li>
-          <li>
+          <li><Link to="/"><FaHome /> Home</Link></li>
           <li><Link to="/pizza"><FaInfo /> About</Link></li>
-          </li>
-          <li>
-            <a href="#"> <FaServicestack /> Services</a>
-          </li>
-          <li>
-            <a href="#">Works</a>
-          </li>
-          <li>
-            <a href="#">Blog</a>
-          </li>
+          <li><a href="#"><FaServicestack /> Services</a></li>
+          <li><a href="#">Works</a></li>
+          <li><a href="#">Blog</a></li>
           <li>
             <Link to="#" onClick={(e) => { e.preventDefault(); setIsOpen(true); }}>
               <FaEnvelope /> Contact
