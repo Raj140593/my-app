@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import "./style.css";
+
 import {
   BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer,
   PieChart, Pie, Cell, LineChart, Line
