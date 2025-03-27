@@ -10,6 +10,8 @@ import Pizza from "./components/pizza/Pizza";
 import PizzaDetail from "./components/pizza/PizzaDetail";
 import BuyNow from "./components/pizza/BuyNow";
 import ScrollToTop from "./components/ScrollToTop";
+import Dashboard from "./components/Dashboard";
+
 
 const Index = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,6 +27,7 @@ const Index = () => {
 
       <Routes>
         <Route path="/" element={<About />} />
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/pizza" element={<Pizza />} />
         <Route path="/pizza/:id" element={<PizzaDetail />} />
         <Route path="/buy-now" element={<BuyNow />} />

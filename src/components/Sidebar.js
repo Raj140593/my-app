@@ -39,6 +39,7 @@ const Sidebar = ({ isOpen, toggleSidebar, setIsContactModalOpen }) => {
         <ul>
           <li><Link to="/" onClick={toggleSidebar}><FaHome /> Home</Link></li>
           <li><Link to="/pizza" onClick={toggleSidebar}><FaInfo /> About</Link></li>
+          <li><Link to="/dashboard" onClick={toggleSidebar}>Dashboard</Link></li>
 
           {/* ✅ Services Dropdown */}
           <li className={`dropdown ${isServicesOpen ? "open" : ""}`}>
