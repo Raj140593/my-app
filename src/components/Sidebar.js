@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaTimes, FaHome, FaInfo, FaServicestack, FaEnvelope, FaIndustry, FaChevronDown } from "react-icons/fa";
-import { MdAssuredWorkload } from "react-icons/md";
+import { MdAssuredWorkload,MdDashboard  } from "react-icons/md";
 import "./style.css";
 
 const Sidebar = ({ isOpen, toggleSidebar, setIsContactModalOpen }) => {
@@ -39,7 +39,7 @@ const Sidebar = ({ isOpen, toggleSidebar, setIsContactModalOpen }) => {
         <ul>
           <li><Link to="/" onClick={toggleSidebar}><FaHome /> Home</Link></li>
           <li><Link to="/pizza" onClick={toggleSidebar}><FaInfo /> About</Link></li>
-          <li><Link to="/dashboard" onClick={toggleSidebar}>Dashboard</Link></li>
+          <li><Link to="/dashboard" onClick={toggleSidebar}><MdDashboard />Dashboard</Link></li>
 
           {/* ✅ Services Dropdown */}
           <li className={`dropdown ${isServicesOpen ? "open" : ""}`}>
