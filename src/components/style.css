@@ -166,7 +166,7 @@
   .sidebar.sidebar-open {
       transform: translateX(0);
       width: 100%; /* ✅ Full width */
-      padding-top: 150px;
+      padding-top: 100px;
         font-size: 20px;
         color: white;
         display: flex;
@@ -174,21 +174,22 @@
         transition: color 0.3s;
     
   }
-  .sidebar .closebtn {
-    position: absolute;
-    top: 10px;
-    right: 100px;
-    font-size: 20px;
-    cursor: pointer;
-    color: red;
-  }
 
   /* ✅ Sidebar Image Full Width */
   .sidebar .logo {
-      width:40%;
-      margin-right: 200px !important;
-      margin-top: 30px;
+      width:50%;
+      margin-right: 120px !important;
       display: block;
+  }
+  .closebtn {
+   
+    top: 5px !important;
+    right: 10px !important;
+    background: none;
+    border: none;
+    color: rgb(243, 43, 43) !important;
+    
+    transition: transform 0.3s;
   }
 
   /* ✅ Prevent Body Scrolling When Sidebar is Open */
@@ -223,7 +224,7 @@
   }
 
   .about-section {
-      width: 100%; /* ✅ Full width le lega taake items ek line mein aaye */
+      width: 100% !important; /* ✅ Full width le lega taake items ek line mein aaye */
       text-align: center;
   }
 }
@@ -234,11 +235,10 @@
       display: flex;
       flex-direction: column; /* Mobile me ek ke baad ek dikhane ke liye */
       align-items: center;
-      width: 50vw !important;
   }
 
   .footer-section {
-    width: 50vw !important;
+    width: 90vw !important;
       margin-bottom: 13px;
   
   }
@@ -260,7 +260,7 @@
   }
 
   .job-card {
-    width: 50vw !important;; /* Adjust for small screens */
+    width: 100% !important;; /* Adjust for small screens */
   }
 }
 
@@ -268,13 +268,15 @@
 @media (max-width: 768px) {
   .navbar {
       display: flex;
+      width: 100%;
       justify-content: space-between;
       align-items: center;
       gap: 8px;
-      flex-wrap: nowrap; /* Ensure everything stays in one line */
+      
   }
 
 }
+
 
 
 /* <---sidenavbar--- start-----> */
