@@ -23,7 +23,8 @@ const Sidebar = ({ isOpen, toggleSidebar, setIsContactModalOpen }) => {
         <button className="closebtn" onClick={toggleSidebar}>
           <FaTimes />
         </button>
-
+        <Link to="#"><img src="/img/tecklogo.png" className="logo" alt="Logo" /></Link>
+        
         <ul>
           <li><Link to="/" onClick={toggleSidebar}><FaHome /> Home</Link></li>
           <li><Link to="/pizza" onClick={toggleSidebar}><FaInfo /> About</Link></li>
@@ -31,12 +32,12 @@ const Sidebar = ({ isOpen, toggleSidebar, setIsContactModalOpen }) => {
 
           {/* ✅ Services Dropdown */}
           <li className={`dropdown ${isServicesOpen ? "open" : ""}`}>
-            <button 
+            <Link 
               className="dropdown-btn"
               onClick={() => setIsServicesOpen(!isServicesOpen)}
             >
               <FaServicestack /> Services <FaChevronDown className={`chevron ${isServicesOpen ? "rotate" : ""}`} />
-            </button>
+            </Link>
             {isServicesOpen && (
               <ul className="dropdown-menu">
                 <li><Link to="/service/web-development" onClick={toggleSidebar}>🌐 Web Development</Link></li>

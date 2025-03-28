@@ -174,19 +174,20 @@
         transition: color 0.3s;
     
   }
-  .close {
+  .sidebar .closebtn {
     position: absolute;
     top: 10px;
-    right: 15px;
-    font-size: 30px;
+    right: 100px;
+    font-size: 20px;
     cursor: pointer;
     color: red;
   }
 
   /* ✅ Sidebar Image Full Width */
   .sidebar .logo {
-      width:70%;
-      margin-right: 100px !important;
+      width:40%;
+      margin-right: 200px !important;
+      margin-top: 30px;
       display: block;
   }
 
@@ -233,10 +234,11 @@
       display: flex;
       flex-direction: column; /* Mobile me ek ke baad ek dikhane ke liye */
       align-items: center;
+      width: 50vw !important;
   }
 
   .footer-section {
-    width: 90vw !important;
+    width: 50vw !important;
       margin-bottom: 13px;
   
   }
@@ -258,7 +260,7 @@
   }
 
   .job-card {
-    width: 100vw !important;; /* Adjust for small screens */
+    width: 50vw !important;; /* Adjust for small screens */
   }
 }
 
@@ -1070,70 +1072,5 @@ input, textarea, select {
   .confirm-button {
     font-size: 12px;
     padding: 8px;
-  }
-}
-
-/* Dashboard Container */
-.dashboard-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  padding: 20px;
-}
-
-/* Card Styling */
-.card {
-  background: #ffffff;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-}
-
-/* Dashboard Page Styling */
-
-/* Headings */
-h2 {
-  text-align: center;
-  font-size: 24px;
-  font-weight: 600;
-  color: #333;
-}
-
-h3 {
-  font-size: 18px;
-  font-weight: 500;
-  margin-bottom: 10px;
-}
-
-
-
-/* Select Dropdown Styling */
-select {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  background: #fff;
-  cursor: pointer;
-  outline: none;
-}
-
-select:focus {
-  border-color: #4a90e2;
-  box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-  .dashboard-container {
-    grid-template-columns: 1fr;
   }
 }

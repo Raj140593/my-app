@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "./style.css";
-
 import {
   BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer,
   PieChart, Pie, Cell, LineChart, Line
@@ -47,27 +45,31 @@ const Dashboard = () => {
         ))}
       </select>
 
-      <div style={{ display: "flex", gap: "20px", marginTop: "20px" }}>
+      <div style={{ display: "flex", flexWrap: "wrap", gap: "20px", justifyContent: "center", marginTop: "20px" }}>
         {/* Total Recipes Bar Chart */}
-        <div>
+        <div style={{ flex: "1 1 300px", minWidth: "300px" }}>
           <h3>Total Recipes</h3>
-          <BarChart width={300} height={200} data={[{ name: "Total", count: totalRecipes }]}>
-            <XAxis dataKey="name" />
-            <YAxis />
-            <Tooltip />
-            <Bar dataKey="count" fill="#0088FE" />
-          </BarChart>
+          <ResponsiveContainer width="100%" height={250}>
+            <BarChart data={[{ name: "Total", count: totalRecipes }]}>
+              <XAxis dataKey="name" />
+              <YAxis />
+              <Tooltip />
+              <Bar dataKey="count" fill="#0088FE" />
+            </BarChart>
+          </ResponsiveContainer>
         </div>
 
         {/* Average Rating Line Chart */}
-        <div>
+        <div style={{ flex: "1 1 300px", minWidth: "300px" }}>
           <h3>Avg Rating</h3>
-          <LineChart width={300} height={200} data={[{ name: "Avg", rating: avgRating }]}>
-            <XAxis dataKey="name" />
-            <YAxis domain={[0, 5]} />
-            <Tooltip />
-            <Line type="monotone" dataKey="rating" stroke="#FF8042" />
-          </LineChart>
+          <ResponsiveContainer width="100%" height={250}>
+            <LineChart data={[{ name: "Avg", rating: avgRating }]}>
+              <XAxis dataKey="name" />
+              <YAxis domain={[0, 5]} />
+              <Tooltip />
+              <Line type="monotone" dataKey="rating" stroke="#FF8042" />
+            </LineChart>
+          </ResponsiveContainer>
         </div>
       </div>
 
