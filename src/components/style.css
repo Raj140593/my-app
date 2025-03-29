@@ -1,3 +1,4 @@
+
 /* Scroll Progress Indicator */
 .scroll-progress {
   position: fixed;
@@ -8,7 +9,10 @@
   z-index: 1000;
   transition: width 0.2s ease-out;
 }
+
 /* 🔹 Sidebar Base Styles */
+
+
 .sidebar {
   width: 250px;
   height: 100vh;
@@ -141,8 +145,6 @@
 .dropdown-menu li:hover {
   background: rgba(255, 255, 255, 0.1);
 }
-/* ✅ Services Dropdown List Items */
-/* ✅ Services Dropdown List Items */
 .sidebar .dropdown-menu li a {
   font-size: 11px !important; 
   
@@ -278,7 +280,6 @@
 }
 
 
-
 /* <---sidenavbar--- start-----> */
 .sidebar img{
     width: 250px;
@@ -357,26 +358,26 @@
     .about-page {
         text-align: center;
         padding: 0px;
-
+        
       }
       .jobpost
       {
         font-size: 50px;
         font-weight: bold;
-
+       
       }
       .about-heading {
         font-size: 32px;
         font-weight: bold;
         margin-bottom: 20px;
-
+        
       }
-
+      
       .banner-container {
         width: 100%;
         height: auto;
       }
-
+      
       .banner-image {
         width: 100%;
         margin-bottom: 10px;
@@ -386,10 +387,10 @@
       .about-sections {
         display: flex;
         justify-content: space-between;
-
+       
       }
-
-
+      
+      
       .about-section {
         padding: 10px;  /* Yeh text aur border ke beech space dega */
       }
@@ -399,19 +400,19 @@
         border-radius: 8px;
         margin-bottom: 20px; /* Yeh gap create karega */
       }
-
+    
       .jobpost {
         font-size: 32px;
         font-weight: bold;
         margin-bottom: 20px;
       }
-
+    
       .job-list {
         display: flex;
         justify-content:space-between;
-
+       
       }
-
+    
       .job-card {
         width: 400px;
         background: white;
@@ -421,7 +422,7 @@
         text-align: left;
         font-family: Arial, sans-serif;
       }
-
+    
       .job-date {
         background: #2196F3;
         color: white;
@@ -429,23 +430,23 @@
         border-radius: 5px;
         display: inline-block;
       }
-
+    
       .job-title {
         font-size: 18px;
         margin: 10px 0;
-
+       
       }
-
+    
       .job-info {
         font-size: 14px;
         color: #555;
       }
-
+    
       .job-author {
         color: #007bff;
         font-weight: bold;
       }
-
+    
       .read-more {
         background: #2196F3;
         color: white;
@@ -456,11 +457,11 @@
         border-radius: 5px;
         width: 100%;
       }
-
+    
       .read-more:hover {
         background: #1976D2;
       }
-
+    
 /* <--contact page-----> */
 
   /* ContactUs.css */
@@ -562,19 +563,19 @@
     background: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(10px);
   }
-
+  
   /* Modal Box */
   .modal-content {
   background: none;
     border-radius: 20px;
     max-width: 100%;
-
+    
     align-items: center;
     position: relative;
     color: wheat;
-
+  
   }
-
+  
   /* Close Button */
   .close {
     position: absolute;
@@ -584,19 +585,19 @@
     cursor: pointer;
     color: red;
   }
-
+  
   /* Image Styling */
   .image-container {
     width: 100%;
     text-align: center;
-
+   
   }
-
+  
   .image-container img {
     max-width: 100%;
     border-radius: 10px;
   }
-
+  
   /* Form Styling */
   .contact-form input,
   .contact-form textarea {
@@ -605,9 +606,9 @@
     margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 5px;
-
+    
   }
-
+  
   .contact-form button {
     width: 100%;
     padding: 10px;
@@ -617,29 +618,29 @@
     border-radius: 5px;
     cursor: pointer;
   }
-
+  
   .contact-form button:disabled {
     background: gray;
     cursor: not-allowed;
   }
-
+  
   .contact-form button:hover {
     background: #0056b3;
   }
-
+ 
   /* Success & Error Messages */
   .success {
     color: green;
     font-size: 14px;
     margin-bottom: 10px;
   }
-
+  
   .error {
     color: red;
     font-size: 14px;
     margin-bottom: 10px;
   }
-
+  
   /* Animations */
   @keyframes fadeIn {
     from {
@@ -649,7 +650,7 @@
       opacity: 1;
     }
   }
-
+  
   @keyframes slideDown {
     from {
       transform: translateY(-20px);
@@ -658,17 +659,17 @@
       transform: translateY(0);
     }
   }
-
+  
   @media (min-width: 768px) {
     .modal-content {
       flex-direction: row;
     }
-
+  
     .contact-form {
       width: 50%;
       padding: 20px;
     }
-
+  
     .image-container {
       width: 50%;
       padding: 20px;
@@ -677,13 +678,13 @@
   /* <--footer------> */
   .footer-section ul {
     list-style: none; 
-
+   
   }
-
+  
   .footer-section ul li {
     padding: 2px 0; 
   }
-
+  
   .footer-container {
     display: flex;
     justify-content: space-between;
@@ -691,9 +692,9 @@
     margin-top: 70px;
         padding: 20px;
     background: #091d3e;
-
+    
   }
-
+  
   .footer-section {
     width: 28%;
     padding: 20px;
@@ -702,21 +703,21 @@
     border-radius: 10px;
     box-shadow: inset 0px 0px 10px rgba(255, 255, 255, 0.05),
       0px 5px 15px rgba(0, 0, 0, 0.5);
-
+      
   }
-
+  
   .footer-section h2 {
     color: #fff;
     font-size: 18px;
     margin-bottom: 15px;
   }
-
+  
   .footer-section p {
     color: #aaa;
     font-size: 16px;
     margin: 10px;
   }
-
+  
   .footer-section a {
     color: #5ea2ff;
     font-size: 14px;
@@ -725,30 +726,30 @@
     margin-bottom: 5px;
     list-style: none;
   }
-
+  
   .footer-section a:hover {
     color: orangered;
     transform: scale(1.05);
   }
-
+  
   .social-icons {
     display: flex;
     justify-content: center;
     gap: 15px;
     margin-top: 20px;
   }
-
+  
   .social-icon img {
     width: 40px;
     height: 40px;
     object-fit: cover;
     transition: transform 0.3s ease-in-out;
   }
-
+  
   .social-icon:hover img {
     transform: scale(1.1);
   }
-
+  
   .news-item {
     display: flex;
     align-items: center;
@@ -758,15 +759,15 @@
     border-radius: 10px;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
   }
-
+  
   .news-item img {
     width: 50px;
     height: 50px;
     margin-right: 10px;
     border-radius: 5px;
-
+   
   }
-
+ 
 /* Footer bottom part fix at the bottom */
 /* style.css */
 
@@ -776,7 +777,7 @@
   padding: 40px 20px;
   text-align: center;
   overflow: hidden;
-
+ 
 }
 
 .footer-container {
@@ -792,23 +793,23 @@
     padding: 10px 0;
     margin-top: 20px; /* ✅ Footer ke upar space dega */
     border-top: 1px solid rgba(33, 165, 218, 0.2); color: #fff;
-
+    
   }
-
+  
   /* Footer bottom link styling */
 
   .footer-bottom a:hover {
     text-shadow: 0px 0px 10px rgba(94, 162, 255, 0.7);
   }
   /* <----header-----> */
-
+  
  .navbar {
     background-color: #091d3e !important;
     padding: 10px;
     list-style: none;
     text-align: center;
     display: flex;
-
+   
 }
 
 .navbar {
