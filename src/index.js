@@ -11,6 +11,8 @@ import PizzaDetail from "./components/pizza/PizzaDetail";
 import BuyNow from "./components/pizza/BuyNow";
 import ScrollToTop from "./components/ScrollToTop";
 import Dashboard from "./components/Dashboard";
+import CartPage from "./components/CartPage"; 
+import { CartProvider } from "./components/CartContext"; // ✅ Correct Import
 
 const Index = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,16 +21,20 @@ const Index = () => {
   return (
     <div className={`main-content ${isOpen ? "shifted" : ""}`}>
       <Header toggleSidebar={() => setIsOpen(!isOpen)} isOpen={isOpen} />
-      <Sidebar isOpen={isOpen} toggleSidebar={() => setIsOpen(!isOpen)} setIsContactModalOpen={setIsContactModalOpen} />
+      <Sidebar 
+        isOpen={isOpen} 
+        toggleSidebar={() => setIsOpen(!isOpen)} 
+        setIsContactModalOpen={setIsContactModalOpen} 
+      />
       <ContactUs isOpen={isContactModalOpen} setIsOpen={setIsContactModalOpen} />
       <Routes>
         <Route path="/" element={<About />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/pizza" element={<Pizza />} />
+        <Route path="/cart" element={<CartPage />} />
         <Route path="/pizza/:id" element={<PizzaDetail />} />
         <Route path="/buy-now" element={<BuyNow />} />
       </Routes>
-
       <Footer />
     </div>
   );
@@ -39,7 +45,9 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <ScrollToTop />
-      <Index />
+      <CartProvider> {/* ✅ Ensure Provider is Wrapped Correctly */}
+        <Index />
+      </CartProvider>
     </BrowserRouter>
   </React.StrictMode>
 );
