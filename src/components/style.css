@@ -149,7 +149,184 @@
   font-size: 11px !important; 
   
 }
+/* मध्यम आकार के मोबाइल उपकरणों (321px से 480px चौड़ाई) के लिए */
+@media (min-width: 321px) and (max-width: 480px) {
+  .sidebar {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #0b9ca1;
+    z-index: 10000;
+    overflow-y: auto;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(-100%);
+  }
 
+  .sidebar.sidebar-open {
+    transform: translateX(0);
+    padding-top: 80px;
+    font-size: 18px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    transition: color 0.3s;
+  }
+
+  .sidebar .logo {
+    width: 70%;
+    margin-right: 0 !important;
+    display: block;
+  }
+
+  .closebtn {
+    top: 5px !important;
+    right: 10px !important;
+    background: none;
+    border: none;
+    color: rgb(243, 43, 43) !important;
+    transition: transform 0.3s;
+  }
+
+  body.sidebar-active {
+    overflow: hidden;
+    height: 100vh;
+  }
+
+  .overlay {
+    display: block;
+  }
+
+  .about-sections {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-section {
+    width: 100% !important;
+    text-align: center;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-section {
+    width: 90vw !important;
+    margin-bottom: 13px;
+  }
+
+  .footer-section .social-icons {
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .job-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .job-card {
+    width: 100% !important;
+  }
+
+  .navbar {
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+  }
+}
+/* बड़े मोबाइल उपकरणों और टैबलेट्स (481px से 768px चौड़ाई) के लिए */
+@media (min-width: 481px) and (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #0b9ca1;
+    z-index: 10000;
+    overflow-y: auto;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(-100%);
+  }
+
+  .sidebar.sidebar-open {
+    transform: translateX(0);
+    padding-top: 90px;
+    font-size: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    transition: color 0.3s;
+  }
+
+  .sidebar .logo {
+    width: 60%;
+    margin-right: 0 !important;
+    display: block;
+  }
+
+  .closebtn {
+    top: 5px !important;
+    right: 10px !important;
+    background: none;
+    border: none;
+    color: rgb(243, 43, 43) !important;
+    transition: transform 0.3s;
+  }
+
+  body.sidebar-active {
+    overflow: hidden;
+    height: 100vh;
+  }
+
+  .overlay {
+    display: block;
+  }
+
+  .about-sections {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-section {
+    width: 100% !important;
+    text-align: center;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-section {
+    width: 90vw !important;
+    margin-bottom: 13px;
+  }
+
+  .footer-section .social-icons {
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .job-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .job-card {
+    width: 100% !important;
+  }
+
+  .navbar {
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+  }
+}
 
 @media (max-width: 320px) {
   .sidebar {
@@ -258,10 +435,11 @@
       transform: translateX(0);
       width: 100%; /* ✅ Full width */
       padding-top: 100px;
+      padding-left: 200px;
         font-size: 20px;
         color: white;
-        display: flex;
-        gap:150px;
+        display: ruby !important;
+        gap: 0px !important;
         transition: color 0.3s;
     
   }
@@ -269,7 +447,7 @@
   /* ✅ Sidebar Image Full Width */
   .sidebar .logo {
       width:50%;
-      margin-right: 150px !important;
+      margin-right: 120px !important;
       display: block;
   }
   .closebtn {

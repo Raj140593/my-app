@@ -12,7 +12,6 @@ import BuyNow from "./components/pizza/BuyNow";
 import ScrollToTop from "./components/ScrollToTop";
 import Dashboard from "./components/Dashboard";
 
-
 const Index = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
@@ -21,10 +20,7 @@ const Index = () => {
     <div className={`main-content ${isOpen ? "shifted" : ""}`}>
       <Header toggleSidebar={() => setIsOpen(!isOpen)} isOpen={isOpen} />
       <Sidebar isOpen={isOpen} toggleSidebar={() => setIsOpen(!isOpen)} setIsContactModalOpen={setIsContactModalOpen} />
-
-      {/* ContactUs Modal */}
-      {isContactModalOpen && <ContactUs isOpen={isContactModalOpen} setIsOpen={setIsContactModalOpen} />}
-
+      <ContactUs isOpen={isContactModalOpen} setIsOpen={setIsContactModalOpen} />
       <Routes>
         <Route path="/" element={<About />} />
         <Route path="/dashboard" element={<Dashboard />} />
@@ -33,8 +29,7 @@ const Index = () => {
         <Route path="/buy-now" element={<BuyNow />} />
       </Routes>
 
-      {/* Footer me modal control pass kar diya */}
-      <Footer setIsOpen={setIsContactModalOpen} />
+      <Footer />
     </div>
   );
 };

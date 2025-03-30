@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import "./style.css";
 
 const ContactUs = ({ isOpen, setIsOpen }) => {
