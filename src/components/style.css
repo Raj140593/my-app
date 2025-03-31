@@ -226,6 +226,14 @@
       width: 100% !important; /* ✅ Full width le lega taake items ek line mein aaye */
       text-align: center;
   }
+  .about-heading {
+    font-size: 1.5rem; /* Adjust heading size for mobile */
+  }
+
+  .about-content {
+    font-size: 0.9rem; /* Adjust content size for mobile */
+  }
+
 }
 @media (max-width: 768px) {
   .footer-container {
