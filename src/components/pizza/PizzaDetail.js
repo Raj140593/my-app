@@ -1,16 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
-import { useCart } from '../CartContext'; // Ensure the path is correct
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '../style.css';
-const handleAddToCart = () => {
-  addToCart({
-    id: pizza.id,
-    name: pizza.name,
-    price: pizza.price,  // ✅ Ensure price is passed
-    image: pizza.image
-  });
-};
+import React, { useState, useEffect } from "react";
+import { useParams, Link, useNavigate } from "react-router-dom";
+import { useCart } from "../CartContext"; // Ensure the path is correct
+import "bootstrap/dist/css/bootstrap.min.css";
+import "../style.css";
+
 const PizzaDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -21,27 +14,35 @@ const PizzaDetail = () => {
 
   useEffect(() => {
     fetch(`https://dummyjson.com/recipes/${id}`)
-      .then(response => response.json())
-      .then(data => {
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Fetched Recipe Data:", data); // ✅ Debugging
         setRecipe(data);
         setLoading(false);
       })
       .catch(() => {
-        setError('Error fetching recipe details. Please try again later.');
+        setError("Error fetching recipe details. Please try again later.");
         setLoading(false);
       });
   }, [id]);
 
   const handleAddToCart = () => {
     if (recipe) {
-      addToCart(recipe);
+      addToCart({
+        id: recipe.id,
+        name: recipe.name,
+        price: recipe.caloriesPerServing * 2 || 100, // ✅ Ensure price is valid
+        image: recipe.image,
+      });
       alert(`${recipe.name} has been added to your cart.`);
     }
   };
 
-  if (loading) return <h3 className="text-center mt-5">Loading recipe details... 🍕</h3>;
+  if (loading)
+    return <h3 className="text-center mt-5">Loading recipe details... 🍕</h3>;
   if (error) return <h3 className="text-danger text-center mt-5">{error}</h3>;
-  if (!recipe) return <h3 className="text-center mt-5">Recipe not found! 😔</h3>;
+  if (!recipe)
+    return <h3 className="text-center mt-5">Recipe not found! 😔</h3>;
 
   return (
     <div className="pizza-detail-container">
