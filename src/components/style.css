@@ -149,342 +149,71 @@
   font-size: 11px !important; 
   
 }
-/* मध्यम आकार के मोबाइल उपकरणों (321px से 480px चौड़ाई) के लिए */
-@media (min-width: 321px) and (max-width: 480px) {
-  .sidebar {
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #0b9ca1;
-    z-index: 10000;
-    overflow-y: auto;
-    transition: transform 0.3s ease-in-out;
-    transform: translateX(-100%);
-  }
-
-  .sidebar.sidebar-open {
-    transform: translateX(0);
-    padding-top: 80px;
-    font-size: 18px;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    transition: color 0.3s;
-  }
-
-  .sidebar .logo {
-    width: 70%;
-    margin-right: 0 !important;
-    display: block;
-  }
-
-  .closebtn {
-    top: 5px !important;
-    right: 10px !important;
-    background: none;
-    border: none;
-    color: rgb(243, 43, 43) !important;
-    transition: transform 0.3s;
-  }
-
-  body.sidebar-active {
-    overflow: hidden;
-    height: 100vh;
-  }
-
-  .overlay {
-    display: block;
-  }
-
-  .about-sections {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .about-section {
-    width: 100% !important;
-    text-align: center;
-  }
-
-  .footer-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .footer-section {
-    width: 90vw !important;
-    margin-bottom: 13px;
-  }
-
-  .footer-section .social-icons {
-    justify-content: center;
-    gap: 8px;
-  }
-
-  .job-list {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .job-card {
-    width: 100% !important;
-  }
-
-  .navbar {
-    justify-content: space-between;
-    align-items: center;
-    gap: 8px;
-  }
-}
-/* बड़े मोबाइल उपकरणों और टैबलेट्स (481px से 768px चौड़ाई) के लिए */
-@media (min-width: 481px) and (max-width: 768px) {
-  .sidebar {
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #0b9ca1;
-    z-index: 10000;
-    overflow-y: auto;
-    transition: transform 0.3s ease-in-out;
-    transform: translateX(-100%);
-  }
-
-  .sidebar.sidebar-open {
-    transform: translateX(0);
-    padding-top: 107px !important;
-        padding-left: 116px !important;
-    font-size: 20px;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    gap: 0px;
-    transition: color 0.3s;
-  }
-
-  .sidebar .logo {
-    width: 60%;
-    margin-right: 0 !important;
-    display: block;
-  }
-
-  .closebtn {
-    top: 5px !important;
-    right: 10px !important;
-    background: none;
-    border: none;
-    color: rgb(243, 43, 43) !important;
-    transition: transform 0.3s;
-  }
-
-  body.sidebar-active {
-    overflow: hidden;
-    height: 100vh;
-  }
-
-  .overlay {
-    display: block;
-  }
-
-  .about-sections {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .about-section {
-    width: 100% !important;
-    text-align: center;
-  }
-
-  .footer-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .footer-section {
-    width: 90vw !important;
-    margin-bottom: 13px;
-  }
-
-  .footer-section .social-icons {
-    justify-content: center;
-    gap: 8px;
-  }
-
-  .job-list {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .job-card {
-    width: 100% !important;
-  }
-
-  .navbar {
-    justify-content: space-between;
-    align-items: center;
-    gap: 8px;
-  }
-}
-
-@media (max-width: 320px) {
-  .sidebar {
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #0b9ca1;
-    z-index: 10000;
-    overflow-y: auto;
-    transition: transform 0.3s ease-in-out;
-    transform: translateX(-100%);
-  }
-
-  .sidebar.sidebar-open {
-    transform: translateX(0);
-    padding-top: 100px;
-    font-size: 16px;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    transition: color 0.3s;
-  }
-
-  .sidebar .logo {
-    width: 80%;
-    margin-right: 0 !important;
-    display: block;
-  }
-
-  .closebtn {
-    top: 5px !important;
-    right: 10px !important;
-    background: none;
-    border: none;
-    color: rgb(243, 43, 43) !important;
-    transition: transform 0.3s;
-  }
-
-  body.sidebar-active {
-    overflow: hidden;
-    height: 100vh;
-  }
-
-  .overlay {
-    display: block;
-  }
-
-  .about-sections {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .about-section {
-    width: 100% !important;
-    text-align: center;
-  }
-
-  .footer-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .footer-section {
-    width: 90vw !important;
-    margin-bottom: 13px;
-  }
-
-  .footer-section .social-icons {
-    justify-content: center;
-    gap: 8px;
-  }
-
-  .job-list {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .job-card {
-    width: 100% !important;
-  }
-
-  .navbar {
-    justify-content: space-between;
-    align-items: center;
-    gap: 8px;
-  }
-}
-
 /* 🔹 Mobile Responsive */
 @media (max-width: 768px) {
   .sidebar {
-      width: 100%; /* ✅ Full width */
-      position: fixed;
-      top: 0;
-      left: 0;
-      background-color: #0b9ca1;
-      z-index: 10000; /* ✅ Ensure sidebar is on top */
-      overflow-y: auto;
-      transition: transform 0.3s ease-in-out;
-      transform: translateX(-100%); /* ✅ Initially hidden */
+    width: 250px !important; /* Sidebar की चौड़ाई */
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important; /* Sidebar को शुरू में छिपा हुआ रखें */
+    background-color: #0b9ca1 !important;
+    z-index: 10000 !important; /* Sidebar को सबसे ऊपर रखें */
+    overflow-y: auto !important;
+    transform: translateX(-100%) !important; /* Default में hidden */
+    transition: transform 0.3s ease-in-out !important; /* Smooth transition */
   }
 
   .sidebar.sidebar-open {
-      transform: translateX(0);
-      width: 100%; /* ✅ Full width */
-      padding-top: 100px;
-      padding-left: 200px;
-        font-size: 20px;
-        color: white;
-        display: ruby !important;
-        gap: 0px !important;
-        transition: color 0.3s;
-    
+    transform: translateX(0) !important; /* Sidebar को सही तरीके से खोलने के लिए */
   }
 
-  /* ✅ Sidebar Image Full Width */
+  .main-content {
+    transition: margin-left 0.3s ease-in-out !important; /* Content shift transition */
+  }
+
+  .shifted {
+    margin-left: 250px !important; /* Sidebar की चौड़ाई के बराबर content को shift करें */
+  }
+
+  /* Sidebar की Logo को Full width पर दिखाएं */
   .sidebar .logo {
-      width:50%;
-      margin-right: 120px !important;
-      display: block;
+    width: 100% !important;
+    display: block !important;
   }
+
   .closebtn {
-   
-    top: 5px !important;
+    position: absolute !important;
+    top: 10px !important;
     right: 10px !important;
-    background: none;
-    border: none;
+    background: none !important;
+    border: none !important;
     color: rgb(243, 43, 43) !important;
-    
-    transition: transform 0.3s;
+    font-size: 24px !important;
+    cursor: pointer !important;
   }
 
-  /* ✅ Prevent Body Scrolling When Sidebar is Open */
+  /* Sidebar खुलने पर body का scrolling रोकना */
   body.sidebar-active {
-      overflow: hidden;
-      height: 100vh;
+    overflow: hidden !important;
+    height: 100vh !important;
   }
 
-  /* ✅ Transparent Background Click to Close */
+  /* पारदर्शी पृष्ठभूमि */
   .overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 9999;
-      display: none;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: rgba(0, 0, 0, 0.5) !important;
+    z-index: 9999 !important;
+    display: none !important;
   }
 
-  .sidebar-open + .overlay {
-      display: block;
+  .sidebar-open ~ .overlay {
+    display: block !important;
   }
 }
-
 /* Responsive Styling for About Page */
 @media (max-width: 768px) {
   .about-sections {
@@ -498,26 +227,42 @@
       text-align: center;
   }
 }
-
-/* Responsive Footer */
 @media (max-width: 768px) {
   .footer-container {
-      display: flex;
-      flex-direction: column; /* Mobile me ek ke baad ek dikhane ke liye */
-      align-items: center;
+    display: flex;
+    flex-direction: column; /* Footer को stack करने के लिए */
+    align-items: center;
+    text-align: center; /* Text को center में लाने के लिए */
+    padding: 20px; /* Padding बढ़ाने के लिए */
+    background-color: #222; /* Dark background (अगर चाहें तो बदल सकते हैं) */
+    color: white;
   }
 
   .footer-section {
-    width: 90vw !important;
-      margin-bottom: 13px;
-  
+    width: 100% !important; /* Full-width लें ताकि अच्छा दिखे */
+    margin-bottom: 15px; /* Sections के बीच gap */
+    padding: 10px 0; /* अंदर spacing */
   }
 
   /* Social Icons */
   .footer-section .social-icons {
-      display: flex;
-      justify-content: center;
-      gap: 8px;
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Icons के बीच space */
+    flex-wrap: wrap; /* अगर space कम हो तो wrap हो */
+  }
+
+  .footer-section .social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: white; /* Icon के पीछे bg */
+    color: black;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 20px;
   }
 }
 
