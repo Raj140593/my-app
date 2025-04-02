@@ -44,7 +44,7 @@ const Sidebar = ({ isOpen, toggleSidebar, setIsContactModalOpen }) => {
             </Link>
           </li>
           <li>
-            <Link to="/about" onClick={toggleSidebar}>
+            <Link to="/pizza" onClick={toggleSidebar}>
               <FaInfo /> About
             </Link>
           </li>
