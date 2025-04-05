@@ -11,8 +11,8 @@ import PizzaDetail from "./components/pizza/PizzaDetail";
 import BuyNow from "./components/pizza/BuyNow";
 import ScrollToTop from "./components/ScrollToTop";
 import Dashboard from "./components/Dashboard";
-import CartPage from "./components/CartPage"; 
-import { CartProvider } from "./components/CartContext"; // ✅ Correct Import
+import OrderBooking from "./components/OrderBooking";
+import { CartProvider } from "./components/CartContext";
 
 const Index = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,9 +31,9 @@ const Index = () => {
         <Route path="/" element={<About />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/pizza" element={<Pizza />} />
-        <Route path="/cart" element={<CartPage />} />
         <Route path="/pizza/:id" element={<PizzaDetail />} />
         <Route path="/buy-now" element={<BuyNow />} />
+        <Route path="/order-booking" element={<OrderBooking />} />
       </Routes>
       <Footer />
     </div>

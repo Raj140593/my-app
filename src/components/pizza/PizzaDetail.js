@@ -46,15 +46,15 @@ const PizzaDetail = () => {
 
   return (
     <div className="pizza-detail-container">
-     
+      {/* Left Side: Image */}
       <div className="pizza-image-container">
         <img src={recipe.image} alt={recipe.name} className="pizza-image" />
       </div>
 
-     
+      {/* Right Side: Details */}
       <div className="pizza-detail-content">
         <h2 className="pizza-title">{recipe.name}</h2>
-        <p className="pizza-price">₹{recipe.caloriesPerServing * 2}</p> 
+        <p className="pizza-price">₹{recipe.caloriesPerServing * 2}</p> {/* Fake Price Calculation */}
         <p className="pizza-rating">⭐ {recipe.rating} ({recipe.reviewCount} reviews)</p>
         <p className="pizza-info"><b>🌎 Cuisine:</b> {recipe.cuisine}</p>
         <p className="pizza-info"><b>🔖 Tags:</b> {recipe.tags.join(', ')}</p>
@@ -68,7 +68,7 @@ const PizzaDetail = () => {
         <div className="button-container">
           <Link to="/pizza" className="back-button">⬅ Back to Recipes</Link>
           <button className="add-to-cart-button" onClick={handleAddToCart}>🛍 Add to Cart</button>
-          <Link to="/cart" className="view-cart-button">🛒 View Cart</Link>
+          <Link to="/buy-now" className="view-cart-button">🛒 View Cart</Link>
         </div>
       </div>
     </div>
