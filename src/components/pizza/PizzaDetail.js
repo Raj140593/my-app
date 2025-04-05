@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
-import { useCart } from "../CartContext"; // Ensure the path is correct
+import { useCart } from "../CartContext"; 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../style.css";
 
@@ -46,15 +46,15 @@ const PizzaDetail = () => {
 
   return (
     <div className="pizza-detail-container">
-      {/* Left Side: Image */}
+     
       <div className="pizza-image-container">
         <img src={recipe.image} alt={recipe.name} className="pizza-image" />
       </div>
 
-      {/* Right Side: Details */}
+     
       <div className="pizza-detail-content">
         <h2 className="pizza-title">{recipe.name}</h2>
-        <p className="pizza-price">₹{recipe.caloriesPerServing * 2}</p> {/* Fake Price Calculation */}
+        <p className="pizza-price">₹{recipe.caloriesPerServing * 2}</p> 
         <p className="pizza-rating">⭐ {recipe.rating} ({recipe.reviewCount} reviews)</p>
         <p className="pizza-info"><b>🌎 Cuisine:</b> {recipe.cuisine}</p>
         <p className="pizza-info"><b>🔖 Tags:</b> {recipe.tags.join(', ')}</p>

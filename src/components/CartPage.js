@@ -7,8 +7,14 @@ const CartPage = () => {
   const { cartItems = [], removeFromCart, updateQuantity } = useCart();
   const navigate = useNavigate();
 
-  // Calculate total price
-  const totalPrice = cartItems.reduce((total, item) => total + (item.price || 0) * item.quantity, 0);
+  const totalPrice = cartItems.reduce(
+    (total, item) => total + (item.price || 0) * item.quantity,
+    0
+  );
+
+  const handlePurchase = () => {
+    navigate("/buy-now", { state: { cartItems, totalPrice } });
+  };
 
   return (
     <div className="cart-container">
@@ -24,26 +30,21 @@ const CartPage = () => {
                 <div className="cart-item-details">
                   <strong>{item.name}</strong>
                   <p className="price">₹{item.price}</p>  
-                  
-                  {/* Quantity Update */}
                   <div className="quantity-controls">
                     <button onClick={() => updateQuantity(item.id, Math.max(1, item.quantity - 1))}>➖</button>
                     <span>{item.quantity}</span>
                     <button onClick={() => updateQuantity(item.id, item.quantity + 1)}>➕</button>
                   </div>
-
-                  {/* Remove button */}
                   <button className="remove-button" onClick={() => removeFromCart(item.id)}>Remove</button>
                 </div>
               </li>
             ))}
           </ul>
 
-          {/* Cart Summary */}
           <div className="cart-summary">
             <h3>Order Summary</h3>
             <p>Total: <strong>₹{totalPrice}</strong></p>
-            <button className="checkout-button" onClick={() => navigate("/buy-now")}>
+            <button className="checkout-button" onClick={handlePurchase}>
               Proceed to Purchase
             </button>
           </div>

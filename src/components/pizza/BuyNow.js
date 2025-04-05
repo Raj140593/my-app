@@ -1,25 +1,38 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
-import "../style.css"; // ✅ Import CSS
-import { Link } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
+import "../style.css";
+
 const BuyNow = () => {
   const location = useLocation();
-  const item = location.state?.item; // Get selected item
+  const cartItems = location.state?.cartItems || [];
+  const totalPrice = location.state?.totalPrice || 0;
 
-  if (!item) {
-    return <h2 style={{ textAlign: "center" }}>No item selected</h2>;
+  if (cartItems.length === 0) {
+    return <h2 style={{ textAlign: "center" }}>No items to purchase</h2>;
   }
 
   return (
-    <div style={{ maxWidth: "600px", margin: "40px auto", padding: "20px", textAlign: "center" }}>
-      <h2>Confirm Your Purchase</h2>
-      <img src={item.image} alt={item.name} style={{ width: "100px", borderRadius: "10px" }} />
-      <h3>{item.name}</h3>
-      <p><strong>Price: ₹{item.price || 0}</strong></p> {/* ✅ Price Fix */}
-      <button style={{ padding: "10px 20px", background: "green", color: "white", border: "none", borderRadius: "5px", cursor: "pointer" }}>
-        Pay Now
-      </button>
-       <Link to="/pizza" className="back-button">⬅ Back to Recipes</Link>
+    <div style={{ maxWidth: "800px", margin: "40px auto", padding: "20px" }}>
+      <h2 style={{ textAlign: "center" }}>🛍️ Purchase Summary</h2>
+      {cartItems.map((item) => (
+        <div key={item.id} className="buy-now-item">
+          <img src={item.image} alt={item.name} className="buy-now-image" />
+          <div className="buy-now-details">
+            <h3>{item.name}</h3>
+            <p>Quantity: {item.quantity}</p>
+            <p>Price per unit: ₹{item.price}</p>
+            <p>Subtotal: ₹{item.price * item.quantity}</p>
+          </div>
+        </div>
+      ))}
+
+      <hr />
+      <h3 style={{ textAlign: "right" }}>Total: ₹{totalPrice}</h3>
+      <div style={{ textAlign: "center", marginTop: "20px" }}>
+        <button className="checkout-button">Pay Now</button>
+        <br />
+        <Link to="/" className="back-button">⬅ Back to Home</Link>
+      </div>
     </div>
   );
 };
